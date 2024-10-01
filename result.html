@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis Results</h1>
+        <p>Overall Sentiment Score: {{ overall_score }}</p>
+
+        <h2>Detailed Sentiment Analysis</h2>
+        <div class="table-container">
+            {{ table|safe }}
+        </div>
+
+
+        <h2>Sentiment Distribution</h2>
+        <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart">
+    
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
